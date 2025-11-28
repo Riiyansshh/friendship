@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship with Mahi</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(to bottom, #ffcccc, #ff6699, #cc3366);
+            background-attachment: fixed;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.6;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff3366;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        p {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .intro-text {
+            font-size: 20px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .emoji {
+            font-size: 30px;
+        }
+        button {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: 'Pacifico', cursive;
+            border-radius: 15px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            min-height: 50px; /* Ensure touch-friendly size */
+            min-width: 120px;
+        }
+        button:hover {
+            background-color: #cc0033;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 600px) {
+            body {
+                font-size: 20px; /* Increased for better readability */
+                padding: 15px; /* Adjusted padding */
+                line-height: 1.8; /* Better line spacing */
+            }
+            h1 {
+                font-size: 2.2em; /* Slightly larger for mobile */
+                margin-bottom: 15px;
+            }
+            p, .intro-text {
+                padding: 12px; /* Reduced padding for more content space */
+                font-size: 18px; /* Ensure readable text */
+                max-width: 100%; /* Full width on mobile */
+                margin: 10px auto;
+            }
+            button {
+                padding: 18px 25px; /* Larger padding for easier tapping */
+                font-size: 16px; /* Readable button text */
+                margin: 8px; /* Closer spacing */
+                min-height: 55px; /* Touch-friendly */
+                min-width: 140px;
+            }
+            .emoji {
+                font-size: 28px; /* Adjusted emoji size */
+            }
+        }
+        @media (max-width: 400px) {
+            body {
+                font-size: 18px;
+                padding: 10px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p, .intro-text {
+                padding: 10px;
+                font-size: 16px;
+            }
+            button {
+                padding: 16px 20px;
+                font-size: 14px;
+                min-height: 50px;
+                min-width: 120px;
+            }
+            .emoji {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="start-page">
+        <h1>Let's get started</h1>
+        <p class="intro-text">Hey Mahi! 🌟 We've crossed paths, but friendship? That's a whole new adventure waiting to unfold. 💕</p>
+        <p>We are not friends yet, so let me take you for some introduction. Let's embark on this journey together! 🚀</p>
+        <p class="emoji">❤️✨😊</p>
+        <button onclick="showFriendsPage()">Take me there</button>
+    </div>
+
+    <div id="friends-page" class="hidden">
+        <h1>We're now friends</h1>
+        <p>We met on June 2nd, 2024, and from that very first moment, you brought an explosion of joy, light, and pure enjoyment into my life. ❤️ You're the one I truly want as my best friend—the person I'd leave anyone behind for, just to be by your side. 💕 You've made me fall for you in ways I never imagined, with your kindness, your smile, and the way you light up every room. 🌟 You're not less than a princess; you're a queen in my world, graceful and unforgettable. 👑</p>
+        <p>Every day with you feels like a new adventure, filled with laughter that echoes in my heart and memories that I'll cherish forever. 😊 Your presence is my favorite part of the day, turning ordinary moments into something magical. ✨ I promise to be there for you through thick and thin, sharing secrets, dreams, and endless fun. 🤝 You're the friend I've always dreamed of, and I'm so grateful to have you. 🙏</p>
+        <p>As the saying goes, "A true friend is someone who is there for you when they'd rather be anywhere else." 💬 Let's make countless memories together, Mahi—you and me, Friends Forever. 🌈</p>
+        <button onclick="backToStart()">Back</button>
+        <button onclick="showWhoYouArePage()">Who you are to me?</button>
+        <button onclick="showWhyFriendPage()">Why I want to be your friend</button>
+    </div>
+
+    <div id="who-you-are-page" class="hidden">
+        <h1>Who You Are to Me</h1>
+        <p>You're not just a friend; you're my confidant, my cheerleader, and my partner in crime. 🕵️‍♀️ Your intelligence amazes me, and your compassion inspires me every day. 🌸 I admire how you balance everything with such grace—work, fun, and kindness. ⚖️ You've taught me to see the world through a lens of love and laughter. ❤️‍🔥</p>
+        <p>Fun fact: Did you know you're the only one who can make me dance like no one's watching? 💃 Or that your favorite snacks are now my guilty pleasures too? 🍿 Let's celebrate our quirks and grow together. 🌱 This friendship is my greatest gift, and I promise to nurture it with all my heart. 💖</p>
+        <p>"A Friendship is That Where We Care Each Other But Never Leave Each Other For Any Argument".</p>
+        <p>— A beautiful quote to seal our friendship 💕</p>
+        <button onclick="backToFriends()">Back</button>
+        <button onclick="continueFromWho()">Continue</button>
+    </div>
+
+    <div id="why-friend-page" class="hidden">
+        <h1>Why I Want to Be Your Friend</h1>
+        <p>Since the day I met you, I want to be your friend because I liked your nature, I liked your style, I liked everything about you 💖</p>
+        <p>I want to be your friend because I love the way you talk, I love the way you move, I love the way you live, I love to see you smiling 😊, I love to see you happy 🌟, I love to see you growing 🌱</p>
+        <p>I don't have any other intention 💬<br>
+        My only intention is to care you, walk with you, see you achieving your goals 🤝<br>
+        My only intentions are to share my secrets with a girl I trust the most 🔒<br>
+        I felt so hard that I started dreaming about you every single day 💭</p>
+        <p>For you we became friends for me 💑<br>
+        But for me I am melted 🫠<br>
+        For me if it's you then it's only you.. ❤️</p>
+        <button onclick="backToFriends()">Back</button>
+        <button onclick="continueFromWhy()">Continue</button>
+    </div>
+
+    <div id="end-page" class="hidden">
+        <h1>At The End</h1>
+        <p>As we come to the end of this little journey, I want to say that our friendship is something special to me. I'm glad to have a beautiful friend like you who brings so much light into my life. I didn't just copy these words; I wrote them with love and care, thinking about all the moments we've shared and the ones to come. Let's take our friendship further and cross those limits together, exploring new depths and making even more memories. You mean a lot to me, and I'm excited for whatever comes next. 💕🌟</p>
+        <button onclick="goHome()">Home Page</button>
+    </div>
+
+    <script>
+        let hasReadWho = false;
+        let hasReadWhy = false;
+
+        function showFriendsPage() {
+            document.getElementById('start-page').classList.add('hidden');
+            document.getElementById('friends-page').classList.remove('hidden');
+        }
+
+        function backToStart() {
+            document.getElementById('friends-page').classList.add('hidden');
+            document.getElementById('start-page').classList.remove('hidden');
+        }
+
+        function showWhoYouArePage() {
+            document.getElementById('friends-page').classList.add('hidden');
+            document.getElementById('who-you-are-page').classList.remove('hidden');
+            hasReadWho = true;
+        }
+
+        function showWhyFriendPage() {
+            document.getElementById('friends-page').classList.add('hidden');
+            document.getElementById('why-friend-page').classList.remove('hidden');
+            hasReadWhy = true;
+        }
+
+        function backToFriends() {
+            document.getElementById('who-you-are-page').classList.add('hidden');
+            document.getElementById('why-friend-page').classList.add('hidden');
+            document.getElementById('friends-page').classList.remove('hidden');
+        }
+
+        function continueFromWho() {
+            if (hasReadWhy) {
+                showEndPage();
+            } else {
+                showWhyFriendPage();
+            }
+        }
+
+        function continueFromWhy() {
+            if (hasReadWho) {
+                showEndPage();
+            } else {
+                showWhoYouArePage();
+            }
+        }
+
+        function showEndPage() {
+            document.getElementById('who-you-are-page').classList.add('hidden');
+            document.getElementById('why-friend-page').classList.add('hidden');
+            document.getElementById('end-page').classList.remove('hidden');
+        }
+
+        function goHome() {
+            document.getElementById('end-page').classList.add('hidden');
+            document.getElementById('start-page').classList.remove('hidden');
+            // Reset flags if needed, but since it's a one-time read, maybe keep them
+        }
+    </script>
+</body>
+</html>
